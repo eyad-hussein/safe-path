@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
 import 'package:safe_path/pages/new_post_page.dart';
 import '/widgets/custom_card.dart';
 import 'dart:math';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
-
-
 
 DateTime _randomDate() {
   final random = Random();
   final days = random.nextInt(365 * 5); // Random date within the last 5 years
   return DateTime.now().subtract(Duration(days: days));
 }
-
-
 
 class ForumPage extends StatelessWidget {
   List<List<dynamic>> dummyList = [
@@ -92,8 +86,8 @@ class ForumPage extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   SizedBox(
-                    height: 0.8*MediaQuery.of(context).size.height,
-                    width:0.95*MediaQuery.of(context).size.width,
+                    height: 0.8 * MediaQuery.of(context).size.height,
+                    width: 0.95 * MediaQuery.of(context).size.width,
                     child: ListView.builder(
                       itemCount: dummyList.length,
                       itemBuilder: (BuildContext context, int index) {
@@ -104,7 +98,9 @@ class ForumPage extends StatelessWidget {
                               NumberOfReplies: dummyList[index][1],
                               Date: dummyList[index][2],
                             ),
-                            const SizedBox(height: 5,)
+                            const SizedBox(
+                              height: 5,
+                            )
                           ],
                         );
                       },
@@ -120,7 +116,7 @@ class ForumPage extends StatelessWidget {
         width: 120,
         child: FittedBox(
           child: FloatingActionButton.extended(
-            onPressed: ()=> goToNewPostPage(context),
+            onPressed: () => goToNewPostPage(context),
             backgroundColor: Colors.blue,
             label: const Text('New Post'),
             icon: const Icon(FeatherIcons.feather),
@@ -129,6 +125,7 @@ class ForumPage extends StatelessWidget {
       ),
     );
   }
+
   void goToNewPostPage(BuildContext context) {
     Navigator.push(
       context,

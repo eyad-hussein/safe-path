@@ -24,7 +24,7 @@ class WelcomeScreenBtn extends StatelessWidget {
           onPressed: () => goToWhoAmI(context),
           child: Text(
             content,
-            style: TextStyle(fontSize: 42),
+            style: TextStyle(fontSize: 35, color: Colors.white),
           ),
         ),
       ),
