@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: kLightTheme,
-      initialRoute: Routes.loginSignUpRoute,
+      initialRoute: Routes.splashScreenRoute,
       getPages: getPages,
     );
   }

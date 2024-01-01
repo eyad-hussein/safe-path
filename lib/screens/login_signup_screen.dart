@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:safe_path/widget/button_widget.dart';
 import 'package:safe_path/screens/parent_or_child_screen.dart';
 import 'package:get/get.dart';
