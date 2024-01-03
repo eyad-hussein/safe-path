@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:safe_path/widget/avatar_button_widget.dart';
-import 'package:safe_path/widget/button_widget.dart';
 import 'package:safe_path/screens/login_signup_screen.dart' show AuthType;
 import 'package:safe_path/routes.dart';
 

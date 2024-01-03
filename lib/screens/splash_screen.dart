@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(
       const Duration(seconds: 3),
-      () => Get.offNamed(Routes.parentOrChileRoute),
+      () => Get.offNamed(Routes.loginRoute),
     );
   }
 
