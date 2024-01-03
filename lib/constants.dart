@@ -10,3 +10,5 @@ const double spaceLarge = 24;
 const double spaceExtraLarge = 32;
 
 const double borderRadiusDefault = 10;
+
+const int black = 0xFF000000;

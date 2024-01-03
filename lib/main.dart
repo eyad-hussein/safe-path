@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:safe_path/controllers/login_controller.dart';
+import 'package:safe_path/controllers/register_controller.dart';
 import 'package:safe_path/repositories/auth_repository.dart';
 import 'package:safe_path/screens/parent_or_child_screen.dart';
 import 'package:get/get.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
   final HttpRequest httpRequest = Get.put(HttpRequest());
   final AuthRepository authRepository = Get.put(AuthRepository());
   final LoginController loginController = Get.put(LoginController());
+  final RegisterController registerController = Get.put(RegisterController());
 
   @override
   Widget build(BuildContext context) {

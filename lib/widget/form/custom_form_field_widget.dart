@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 enum CustomFormFieldType {
   name,
@@ -20,21 +21,35 @@ class CustomFormField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
 
-  Icon _getIcon(CustomFormFieldType type) {
+  SvgPicture _getIcon(CustomFormFieldType type) {
+    String iconPath =
+        ''; // Provide the SVG file path or asset name for each type
+
     switch (type) {
       case CustomFormFieldType.name:
-        return const Icon(Icons.person);
+        iconPath = 'assets/icons/user.svg';
+        break;
       case CustomFormFieldType.age:
-        return const Icon(Icons.person);
+        iconPath = 'assets/icons/hash.svg';
+        break;
       case CustomFormFieldType.phone:
-        return const Icon(Icons.phone);
+        iconPath = 'assets/icons/phone.svg';
+        break;
       case CustomFormFieldType.email:
-        return const Icon(Icons.email);
+        iconPath = 'assets/icons/mail.svg';
+        break;
       case CustomFormFieldType.password:
-        return const Icon(Icons.lock);
+        iconPath = 'assets/icons/lock.svg';
+        break;
       default:
-        return const Icon(Icons.person);
+        iconPath = 'assets/icons/user.svg';
     }
+
+    return SvgPicture.asset(
+      iconPath,
+      height: 24, // Adjust the height as needed
+      width: 24, // Adjust the width as needed
+    );
   }
 
   @override
@@ -55,12 +70,13 @@ class CustomFormField extends StatelessWidget {
             ),
           ]),
       child: TextFormField(
+        cursorColor: Theme.of(context).colorScheme.onTertiary,
         controller: controller,
         obscureText: type == CustomFormFieldType.password ? true : false,
         style: TextStyle(
           color: Theme.of(context).colorScheme.onTertiary,
           fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize,
-          fontWeight: FontWeight.w300,
+          fontWeight: FontWeight.w400,
         ),
         decoration: InputDecoration(
           icon: _getIcon(type),

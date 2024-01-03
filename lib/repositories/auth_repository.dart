@@ -18,6 +18,7 @@ class AuthRepository extends GetxController {
       },
     );
     // Logic to add token to local storage
+
     return User.fromJson(response['user']);
   }
 
